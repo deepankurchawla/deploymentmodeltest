@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <label>Scrum Manager</label>
+    <nameField>
+        <displayFormat>SM-{0000}</displayFormat>
+        <label>Scrum ID</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Scrum Manager</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Priority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Task_Progress__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Task_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scrum_Task_Sub_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Primary_Task_Assignee__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Scrum_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assumptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Assumptions/Entry-Exit Criteria</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>This field would capture Client Project or Assignment for which Scrum Task is being raised</description>
+        <externalId>false</externalId>
+        <label>Project Assignment / Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Scrum Manager</relationshipLabel>
+        <relationshipName>Scrum_Manager</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Tester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Tester</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Scrum_Manager1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Committed Scrum End Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Priority__c</fullName>
+        <description>Scrum task Priority based on which they need to be picked up and delivered.</description>
+        <externalId>false</externalId>
+        <label>Scrum Priority</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Highest</fullName>
+                    <default>true</default>
+                    <label>Highest</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Lowest</fullName>
+                    <default>false</default>
+                    <label>Lowest</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Scrum_Manager3</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_RAID__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Task RAID</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Risks</fullName>
+                    <default>true</default>
+                    <label>Risks</label>
+                </value>
+                <value>
+                    <fullName>Issues</fullName>
+                    <default>false</default>
+                    <label>Issues</label>
+                </value>
+                <value>
+                    <fullName>Assumptions</fullName>
+                    <default>false</default>
+                    <label>Assumptions</label>
+                </value>
+                <value>
+                    <fullName>Dependency</fullName>
+                    <default>false</default>
+                    <label>Dependency</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scrum_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Scrum Start Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Type_Of_Solution__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Solution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Feasible Solution</fullName>
+                    <default>true</default>
+                    <label>Feasible Solution</label>
+                </value>
+                <value>
+                    <fullName>Work Around Solution</fullName>
+                    <default>false</default>
+                    <label>Work Around Solution</label>
+                </value>
+                <value>
+                    <fullName>Bug/Issue Fix</fullName>
+                    <default>false</default>
+                    <label>Bug/Issue Fix</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Story_Board__c</fullName>
+        <description>This field would capture detail user requirements captured in the form of User Stories</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Capture User Story Requirements in this field.</inlineHelpText>
+        <label>User Story Board</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scrum_Risk_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Green: Scrum Task On Track
+Yellow: Scrum At Risk ( Cause of Concern)
+Red: Scrum At High Risk (Needs Immediate Action)</inlineHelpText>
+        <label>Scrum Risk Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green (On Track)</fullName>
+                    <color>#33CC00</color>
+                    <default>true</default>
+                    <label>Green (On Track)</label>
+                </value>
+                <value>
+                    <fullName>Yellow (Shows Concern)</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                    <label>Yellow (Shows Concern)</label>
+                </value>
+                <value>
+                    <fullName>Red (At High Risk)</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                    <label>Red (At High Risk)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Task Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>Requirement/ Story Boarding</fullName>
+                    <default>false</default>
+                    <label>Requirement/ Story Boarding</label>
+                </value>
+                <value>
+                    <fullName>Story Sign Off</fullName>
+                    <default>false</default>
+                    <label>Story Sign Off</label>
+                </value>
+                <value>
+                    <fullName>Assign Team Members</fullName>
+                    <default>false</default>
+                    <label>Assign Team Members</label>
+                </value>
+                <value>
+                    <fullName>Solution Analysis &amp; Effort Estimations</fullName>
+                    <default>false</default>
+                    <label>Solution Analysis &amp; Effort Estimations</label>
+                </value>
+                <value>
+                    <fullName>Solution Development</fullName>
+                    <default>false</default>
+                    <label>Solution Development</label>
+                </value>
+                <value>
+                    <fullName>Unit Test</fullName>
+                    <default>false</default>
+                    <label>Unit Test</label>
+                </value>
+                <value>
+                    <fullName>Functional Test</fullName>
+                    <default>false</default>
+                    <label>Functional Test</label>
+                </value>
+                <value>
+                    <fullName>Tester Signed Off</fullName>
+                    <default>false</default>
+                    <label>Tester Signed Off</label>
+                </value>
+                <value>
+                    <fullName>UAT Demo &amp; Sign Off</fullName>
+                    <default>false</default>
+                    <label>UAT Demo &amp; Sign Off</label>
+                </value>
+                <value>
+                    <fullName>Ready for Deployment</fullName>
+                    <default>false</default>
+                    <label>Ready for Deployment</label>
+                </value>
+                <value>
+                    <fullName>Deployed Successfully</fullName>
+                    <default>false</default>
+                    <label>Deployed Successfully</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Potential_Solution__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential Solution</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_Progress__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Task Progress</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Scrum_Task_Status__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10%</fullName>
+                    <default>true</default>
+                    <label>10%</label>
+                </value>
+                <value>
+                    <fullName>20%</fullName>
+                    <default>false</default>
+                    <label>20%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>40%</fullName>
+                    <default>false</default>
+                    <label>40%</label>
+                </value>
+                <value>
+                    <fullName>50%</fullName>
+                    <default>false</default>
+                    <label>50%</label>
+                </value>
+                <value>
+                    <fullName>60%</fullName>
+                    <default>false</default>
+                    <label>60%</label>
+                </value>
+                <value>
+                    <fullName>65%</fullName>
+                    <default>false</default>
+                    <label>65%</label>
+                </value>
+                <value>
+                    <fullName>75%</fullName>
+                    <default>false</default>
+                    <label>75%</label>
+                </value>
+                <value>
+                    <fullName>80%</fullName>
+                    <default>false</default>
+                    <label>80%</label>
+                </value>
+                <value>
+                    <fullName>95%</fullName>
+                    <default>false</default>
+                    <label>95%</label>
+                </value>
+                <value>
+                    <fullName>100%</fullName>
+                    <default>false</default>
+                    <label>100%</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Deployed Successfully</controllingFieldValue>
+                <valueName>100%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Not Started</controllingFieldValue>
+                <valueName>10%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assign Team Members</controllingFieldValue>
+                <controllingFieldValue>Story Sign Off</controllingFieldValue>
+                <valueName>30%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Requirement/ Story Boarding</controllingFieldValue>
+                <valueName>20%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution Analysis &amp; Effort Estimations</controllingFieldValue>
+                <valueName>40%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Solution Development</controllingFieldValue>
+                <controllingFieldValue>Unit Test</controllingFieldValue>
+                <valueName>50%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Functional Test</controllingFieldValue>
+                <valueName>60%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tester Signed Off</controllingFieldValue>
+                <valueName>65%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>UAT Demo &amp; Sign Off</controllingFieldValue>
+                <valueName>75%</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ready for Deployment</controllingFieldValue>
+                <valueName>80%</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Test_Efforts_In_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Test_Efforts_In_Hours__c / 8) /  Total_No_Of_Testing_Resources_Assigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Test Efforts (In Days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Scrum_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Scrum End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Task_Assignee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Task Assignee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Scrum_Manager</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_Sub_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Task Sub Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Scrum_Task_Status__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Required</fullName>
+                    <default>false</default>
+                    <label>Not Required</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Deployed Successfully</controllingFieldValue>
+                <controllingFieldValue>Not Started</controllingFieldValue>
+                <controllingFieldValue>Ready for Deployment</controllingFieldValue>
+                <valueName>Not Required</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Deployed Successfully</controllingFieldValue>
+                <controllingFieldValue>Assign Team Members</controllingFieldValue>
+                <controllingFieldValue>Requirement/ Story Boarding</controllingFieldValue>
+                <controllingFieldValue>Story Sign Off</controllingFieldValue>
+                <controllingFieldValue>Solution Analysis &amp; Effort Estimations</controllingFieldValue>
+                <controllingFieldValue>Solution Development</controllingFieldValue>
+                <controllingFieldValue>Unit Test</controllingFieldValue>
+                <controllingFieldValue>Functional Test</controllingFieldValue>
+                <controllingFieldValue>Tester Signed Off</controllingFieldValue>
+                <controllingFieldValue>UAT Demo &amp; Sign Off</controllingFieldValue>
+                <controllingFieldValue>Ready for Deployment</controllingFieldValue>
+                <valueName>On Hold</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Deployed Successfully</controllingFieldValue>
+                <controllingFieldValue>Assign Team Members</controllingFieldValue>
+                <controllingFieldValue>Requirement/ Story Boarding</controllingFieldValue>
+                <controllingFieldValue>Story Sign Off</controllingFieldValue>
+                <controllingFieldValue>Solution Analysis &amp; Effort Estimations</controllingFieldValue>
+                <controllingFieldValue>Solution Development</controllingFieldValue>
+                <controllingFieldValue>Unit Test</controllingFieldValue>
+                <controllingFieldValue>Functional Test</controllingFieldValue>
+                <controllingFieldValue>Tester Signed Off</controllingFieldValue>
+                <controllingFieldValue>UAT Demo &amp; Sign Off</controllingFieldValue>
+                <controllingFieldValue>Ready for Deployment</controllingFieldValue>
+                <valueName>Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Assign Team Members</controllingFieldValue>
+                <controllingFieldValue>Requirement/ Story Boarding</controllingFieldValue>
+                <controllingFieldValue>Story Sign Off</controllingFieldValue>
+                <controllingFieldValue>Solution Analysis &amp; Effort Estimations</controllingFieldValue>
+                <controllingFieldValue>Solution Development</controllingFieldValue>
+                <controllingFieldValue>Unit Test</controllingFieldValue>
+                <controllingFieldValue>Functional Test</controllingFieldValue>
+                <controllingFieldValue>Tester Signed Off</controllingFieldValue>
+                <controllingFieldValue>UAT Demo &amp; Sign Off</controllingFieldValue>
+                <controllingFieldValue>Ready for Deployment</controllingFieldValue>
+                <valueName>In Progress</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Test_Efforts_In_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Test Efforts (Man Hours)</label>
+        <precision>17</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Scrum_Task_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>( Development_Efforts_In_Days__c ) + ( Test_Efforts_In_Days__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Scrum Task Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meta_Data_Record_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Meta Data Record Count</label>
+        <summaryForeignKey>Meta_Data_Manager__c.Scrum_Manager__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_RAID_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum RAID Description</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Scrum_Task_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>( Development_Efforts_In_Hours__c ) + ( Test_Efforts_In_Hours__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Scrum Task Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Scrum_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Scrum Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Limitations_Constraints__c</fullName>
+        <externalId>false</externalId>
+        <label>Limitations &amp; Constraints</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scrum_Problem_Statement__c</fullName>
+        <description>This field captures high level requirements or problem statement description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Problem Statement or High Level requirement Descriptions</inlineHelpText>
+        <label>Problem Statement (HLR) Description</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_Dependent_On__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Scrum Task Dependent On</label>
+        <referenceTo>Scrum_Manager__c</referenceTo>
+        <relationshipLabel>Scrum Task Dependent On</relationshipLabel>
+        <relationshipName>Scrum_Manager</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Task_Justification__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Scrum Task Status Justification</inlineHelpText>
+        <label>Scrum Task Justification</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Team_Member_Record_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Team Member Record Count</label>
+        <summaryForeignKey>Team_Members__c.Scrum_Manager__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Solution_Architect__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Solution Architect</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Scrum_Manager2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Development_Efforts_In_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Development_Efforts_In_Hours__c / 8)/  Total_No_Of_Resources_Assigned__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Development Efforts (In Days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Development_Efforts_In_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Dev Efforts (Man Hours)</label>
+        <precision>17</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Additional_Resources__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Request Additional Resources</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_No_Of_Resources_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <label>Total No. Of Dev Resources Assigned</label>
+        <summarizedField>Team_Members__c.No_of_Developers_to_be_aligned__c</summarizedField>
+        <summaryForeignKey>Team_Members__c.Scrum_Manager__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Development_Efforts_Man_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Development Efforts (Man Hours)</label>
+        <summarizedField>Meta_Data_Manager__c.Developer_Efforts__c</summarizedField>
+        <summaryForeignKey>Meta_Data_Manager__c.Scrum_Manager__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_No_Of_Testing_Resources_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <label>Total No. Of Testing Resources Assigned</label>
+        <summarizedField>Team_Members__c.No_of_Testers_to_assign__c</summarizedField>
+        <summaryForeignKey>Team_Members__c.Scrum_Manager__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <validationRules>
+        <fullName>Meta_Data_Record_Count</fullName>
+        <active>false</active>
+        <errorConditionFormula>Meta_Data_Record_Count__c &gt;1</errorConditionFormula>
+        <errorMessage>Against one Scrum Task, only one Meta Data Record can be inserted. Please edit the previous record to amend the details or else get in touch with your System Administrator.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Team_Members_record_count</fullName>
+        <active>true</active>
+        <errorConditionFormula>Team_Member_Record_Count__c  &gt;1 &amp;&amp;  Request_Additional_Resources__c  = False</errorConditionFormula>
+        <errorMessage>Against one Scrum Task, only one Team Members Record can be inserted at a time. Please edit the previous Team Member record to amend the details or else get in touch with Scrum Owner to Request for Additional Resources.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>When_Key_Resource_is_Null</fullName>
+        <active>true</active>
+        <errorConditionFormula>(Team_Member_Record_Count__c  &lt;1) &amp;&amp;  value( substitute(text(Scrum_Task_Progress__c ),&apos;%&apos;,&apos;&apos;))&gt;30</errorConditionFormula>
+        <errorMessage>Please assign Team Members at the beginning of Solution Design stage to proceed. Key Team Members can be assigned in &apos;Team Members&apos; module for this Scrum Requirement</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Date_not_greater_than_End_Date</fullName>
+        <active>true</active>
+        <description>Start Date not greater than End Date</description>
+        <errorConditionFormula>Scrum_End_Date__c &lt;  Scrum_Start_Date__c</errorConditionFormula>
+        <errorMessage>Scrum End Date cannot be less than Scrum Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Meta_Data_less_than_1_an_stage_Unit_Test</fullName>
+        <active>true</active>
+        <description>Restricts Scrum stage to go beyond Unit Test if Meta Data Record of the parent Scrum is less than 1</description>
+        <errorConditionFormula>(Meta_Data_Record_Count__c &lt;1) &amp;&amp;  value( substitute(text(Scrum_Task_Progress__c ),&apos;%&apos;,&apos;&apos;))&gt;50</errorConditionFormula>
+        <errorMessage>Relevant Meta Data Details have to be entered by you for the Configuration/Customization done for this Scrum Requirement. Scrum Stage cannot move beyond &apos;Unit Test&apos; until details validated.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Generate_Document</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Generate Document</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/SDOC__SDCreate1?id={!Scrum_Manager__c.Id}&amp;Object=Scrum_Manager__c</url>
+    </webLinks>
+</CustomObject>

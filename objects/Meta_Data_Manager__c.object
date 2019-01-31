@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <label>Technical Solution Manager</label>
+    <nameField>
+        <displayFormat>MD-{0000}</displayFormat>
+        <label>Meta Data Manager ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Technical Solution Manager</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Proposed_Solution__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_Of_Meta_Data_Task__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Technical_Task_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Task_Effort_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Meta_Data_Detail__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Meta_Data_URL__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Actual_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Task_Percentage_Completed__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scrum_Manager__r.Scrum_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scrum_Manager__r.Scrum_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Scrum_Manager__r.Scrum_Task_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scrum Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meta_Data_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Meta Data URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Scrum_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Manager</label>
+        <referenceTo>Scrum_Manager__c</referenceTo>
+        <relationshipName>Meta_Data_Manager</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Actual_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meta_Data_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Primary_Task_Assignee__r.FirstName) + &quot; &quot; + (Scrum_Manager__r.Primary_Task_Assignee__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Meta Data Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meta_Data_Detail__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Meta Data Detail</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Meta_Task_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Meta Task Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Ask For More Info</fullName>
+                    <default>false</default>
+                    <label>Ask For More Info</label>
+                </value>
+                <value>
+                    <fullName>Dependent On Someone Else</fullName>
+                    <default>false</default>
+                    <label>Dependent On Someone Else</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Developer_Efforts__c</fullName>
+        <externalId>false</externalId>
+        <label>Developer&apos;s Efforts</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Solution__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scrum_Manager__r.Potential_Solution__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Proposed Solution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Effort_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Effort Hours</label>
+        <precision>7</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>High_Level_Requirement__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scrum_Manager__r.Scrum_Problem_Statement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>High Level Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_Of_Meta_Data_Task__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Meta Data Task</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apex Classes</fullName>
+                    <default>true</default>
+                    <label>Apex Classes</label>
+                </value>
+                <value>
+                    <fullName>Apex Triggers</fullName>
+                    <default>false</default>
+                    <label>Apex Triggers</label>
+                </value>
+                <value>
+                    <fullName>Approval Processes</fullName>
+                    <default>false</default>
+                    <label>Approval Processes</label>
+                </value>
+                <value>
+                    <fullName>Apps</fullName>
+                    <default>false</default>
+                    <label>Apps</label>
+                </value>
+                <value>
+                    <fullName>Buttons/Links</fullName>
+                    <default>false</default>
+                    <label>Buttons/Links</label>
+                </value>
+                <value>
+                    <fullName>Custom Field</fullName>
+                    <default>false</default>
+                    <label>Custom Field</label>
+                </value>
+                <value>
+                    <fullName>Custom Object</fullName>
+                    <default>false</default>
+                    <label>Custom Object</label>
+                </value>
+                <value>
+                    <fullName>Custom Settings</fullName>
+                    <default>false</default>
+                    <label>Custom Settings</label>
+                </value>
+                <value>
+                    <fullName>Dashboards</fullName>
+                    <default>false</default>
+                    <label>Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Email Templates</fullName>
+                    <default>false</default>
+                    <label>Email Templates</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Page Layouts</fullName>
+                    <default>false</default>
+                    <label>Page Layouts</label>
+                </value>
+                <value>
+                    <fullName>Profiles</fullName>
+                    <default>false</default>
+                    <label>Profiles</label>
+                </value>
+                <value>
+                    <fullName>Record Types</fullName>
+                    <default>false</default>
+                    <label>Record Types</label>
+                </value>
+                <value>
+                    <fullName>Reports</fullName>
+                    <default>false</default>
+                    <label>Reports</label>
+                </value>
+                <value>
+                    <fullName>Salesforce License</fullName>
+                    <default>false</default>
+                    <label>Salesforce License</label>
+                </value>
+                <value>
+                    <fullName>Tabs</fullName>
+                    <default>false</default>
+                    <label>Tabs</label>
+                </value>
+                <value>
+                    <fullName>Validation Rules</fullName>
+                    <default>false</default>
+                    <label>Validation Rules</label>
+                </value>
+                <value>
+                    <fullName>Visual Force Pages</fullName>
+                    <default>false</default>
+                    <label>Visual Force Pages</label>
+                </value>
+                <value>
+                    <fullName>Workflow Rules</fullName>
+                    <default>false</default>
+                    <label>Workflow Rules</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Percentage_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Percentage Completed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>10%</fullName>
+                    <default>true</default>
+                    <label>10%</label>
+                </value>
+                <value>
+                    <fullName>20%</fullName>
+                    <default>false</default>
+                    <label>20%</label>
+                </value>
+                <value>
+                    <fullName>25%</fullName>
+                    <default>false</default>
+                    <label>25%</label>
+                </value>
+                <value>
+                    <fullName>30%</fullName>
+                    <default>false</default>
+                    <label>30%</label>
+                </value>
+                <value>
+                    <fullName>40%</fullName>
+                    <default>false</default>
+                    <label>40%</label>
+                </value>
+                <value>
+                    <fullName>50%</fullName>
+                    <default>false</default>
+                    <label>50%</label>
+                </value>
+                <value>
+                    <fullName>60%</fullName>
+                    <default>false</default>
+                    <label>60%</label>
+                </value>
+                <value>
+                    <fullName>70%</fullName>
+                    <default>false</default>
+                    <label>70%</label>
+                </value>
+                <value>
+                    <fullName>75%</fullName>
+                    <default>false</default>
+                    <label>75%</label>
+                </value>
+                <value>
+                    <fullName>80%</fullName>
+                    <default>false</default>
+                    <label>80%</label>
+                </value>
+                <value>
+                    <fullName>90%</fullName>
+                    <default>false</default>
+                    <label>90%</label>
+                </value>
+                <value>
+                    <fullName>100%</fullName>
+                    <default>false</default>
+                    <label>100%</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Technical_Task_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Task Description</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Sandbox_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Salesforce Sandbox/ Environment?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Development Sandbox</fullName>
+                    <default>true</default>
+                    <label>Development Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Full Copy/UAT Sandbox</fullName>
+                    <default>false</default>
+                    <label>Full Copy/UAT Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Training Sandbox</fullName>
+                    <default>false</default>
+                    <label>Training Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Production Sandbox</fullName>
+                    <default>false</default>
+                    <label>Production Sandbox</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <label>Team Members</label>
+    <nameField>
+        <displayFormat>TM-{0000}</displayFormat>
+        <label>Team Members</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Team Members</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Scrum_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Owner:User.FirstName) + &quot; &quot; + (Scrum_Manager__r.Owner:User.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scrum Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scrum_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Scrum Manager</label>
+        <referenceTo>Scrum_Manager__c</referenceTo>
+        <relationshipLabel>Team Members</relationshipLabel>
+        <relationshipName>Team_Members</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Primary_Tester__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Primary_Tester__r.FirstName) + &quot; &quot; + (Scrum_Manager__r.Primary_Tester__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Tester</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Project_Manager__r.FirstName) + &quot; &quot; + (Scrum_Manager__r.Project_Manager__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Tester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Secondary Tester</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>fifth_cons_end_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>third_cons_end_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>fourth_cons_end_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Cons_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Task_Assignee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Primary_Task_Assignee__r.FirstName) + &quot; &quot; + (Scrum_Manager__r.Primary_Task_Assignee__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Task Assignee</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fifth_cons_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>third_cons_start_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Functional_Tester__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>3rd Functional Tester</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members7</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>fourth_cons_start_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Testers_to_assign__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Testers to Assign</label>
+        <precision>6</precision>
+        <required>true</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Cons_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Task_Assignee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Secondary Task Assignee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sec_Test_Assign_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Prim_Test_Assign_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Consultant_Developer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>3rd Consultant/ Developer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>X4th_Consultant_Developer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>4th Consultant/ Developer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>X5th_Consultant_Developer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>5th Consultant / Developer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Solution_Architect__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scrum_Manager__r.Primary_Solution_Architect__r.FirstName) + &quot; &quot; + (Scrum_Manager__r.Primary_Solution_Architect__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Solution Architect</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Third_Test_Assign_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Solution_Architect__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Secondary Solution Architect</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Team_Members9</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Third_Test_Assign_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assign Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Developers_to_be_aligned__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Developers To Assign</label>
+        <precision>6</precision>
+        <required>true</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Assignment_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scrum_Manager__r.Opportunity__r.Name</formula>
+        <label>Project Assignment / Opportunity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>No_of_Testers_greater_than_3</fullName>
+        <active>true</active>
+        <errorConditionFormula>No_of_Testers_to_assign__c &gt;3</errorConditionFormula>
+        <errorMessage>Only 3 Functional Testers can be assigned to a Scrum Task. Please get in touch with Scrum Owner to request additional resources.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>When_No_of_Developers_greater_than_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>No_of_Developers_to_be_aligned__c &gt;5</errorConditionFormula>
+        <errorMessage>Only 5 Developers/Consultant can be assigned to a Scrum Task. Please get in touch with Scrum Owner to request additional resources.</errorMessage>
+    </validationRules>
+</CustomObject>
